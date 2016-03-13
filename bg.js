@@ -13,6 +13,7 @@ var countries = {
 	"FR": "France",
 	"DE": "Germany",
 	"CZ": "Czech Republic",
+	"AU": "Australia"
 };
 
 var replacements = [
@@ -38,7 +39,9 @@ var replacements = [
 
 	["DE", "Frankfurt", "video20.fra01.hls.ttvnw.net"],
 
-	["CZ", "Prague", "video20.prg01.hls.ttvnw.net"]
+	["CZ", "Prague", "video20.prg01.hls.ttvnw.net"],
+
+	["AU", "Sydney", "video-edge-8c6ee0.syd01.hls.ttvnw.net"]
 ];
 
 var per_country = {};

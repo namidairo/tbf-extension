@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		if (e.className && e.className.indexOf('server') != -1) {
 			var id = e.getAttribute("data-id");
 			bg.changeServer(id);
+			bg.save_options();
 
 			document.getElementsByClassName('server--selected')[0].classList.remove('server--selected');
 			e.classList.add('server--selected');

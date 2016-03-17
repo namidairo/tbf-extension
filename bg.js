@@ -1,6 +1,6 @@
 var simple = false;
 
-var using = 2;
+var using = 16;
 var search = /vid.*hls.*(\/hls.*.ts)/;
 
 var countries = {
@@ -73,7 +73,24 @@ function click() {
 	updateButton();
 }
 
+function save_options() {
+  chrome.storage.sync.set({
+    "defaultserver": using
+  }, function() {
+  });
+}
+
+function restore_options() {
+  chrome.storage.sync.get({
+    defaultserver: 16
+  }, function(items) {
+    changeServer(items.defaultserver);
+  });
+}
+
 function init() {
+	//Load default server
+	restore_options();
 	chrome.webRequest.onBeforeRequest.addListener(
 		function(info) {
 			if (info.url.indexOf(".ts") > -1) {
